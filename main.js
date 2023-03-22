@@ -99,25 +99,41 @@ function mostrarObjeto(){
 
     }while(confirm`buscar otro objeto`)
 }
-
-
-elimprimelements();
-let primele=arr.shift();
-
-
-function eliminarUltimo{
-    let ultimo= array.pop();
+function crearArray(){
+    let nomarr= prompt('Nombre array')
+    let arr = new Array(nomarr);
+    alert(`array creado nombre ${arr}`)
+    console.log(arr);
 }
-elimcualquiera()
-let elemelim=arr.splice(pos,1)
 
-añadir comienzo arr()
+function mostrarArray(){
+
+}
+
+function eliminarPrimerElemento(){
+    let primele=arr.shift();
+
+}
+
+function eliminarUltimoElemento() {
+    let ultimo= array.pop();
+    
+}
+ function eliminarCualquierElemento(){
+    let elemelim=arr.splice(pos,1)
+
+ }
+
+function agregarElementoAlInicio(){
 let newelem=arr.unshift()
+}
 
-añadir elemento al final array 
+function agregarElementosAlFinal(){
+
+
     let nuevo= arr.push();
 
- */
+}
 
     
 
