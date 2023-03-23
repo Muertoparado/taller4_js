@@ -5,6 +5,7 @@ var ar='';
 var x='';
 var cont2=0;
 let objarr={};
+ob='';
 menu();
 function menu(){
 let opcion = parseInt(prompt("---------MENU------------ \n1. Lectura de datos \n2. Crear objeto \n3. Mostrar objeto \n4. Crear array \n5. Mostrar array \n6. Elimina primer elemento del array\n7. Elimina último elemento del array\n8. Elimina cualquier elemento del array\n9. Agregar elemento al comienzo del array\n10. Agrega elementos al final del array \n11. crear array conn objetos \n12. Iterar array con objetos con For \n13. Iterar array con objetos con ForEach \n14. Iterar array con objetos con Map y crear copia \n15. Proceso personal \n0. SALIR................................................................"));
@@ -103,37 +104,40 @@ function dato(){
 
 function crearObjeto(){
    /* do{ */
-    cont+=1;
-   
-    let nomb=prompt(`Nombre objeto #${cont}`);
+    
+   /*  let nomb=prompt(`Nombre objeto #${cont}`); */
     var obj = new Object();
     /* let nom=Object.fromEntries(new FormData(e.target)); */
-    obj[`${nomb}`]=[];
+    /* obj[`${nomb}`]=[]; */
     console.log(obj);
-    
+   
   /*     } while(confirm("Desea ingresar otro objeto")); */
    
-   return cont;
 } 
 
 function mostrarObjeto(){
-    do{
+    /* do{
         let index=Number(prompt("ingrese el index del objeto"))
         resul=obj[Object.keys(obj)[index]];
         alert(resul);
         console.log(resul);
 
     }while(confirm`buscar otro objeto`)
+     */
+    console.log(obj);
     
 }
 function crearArray(){
-    let nombre= prompt("Nombre array");
+let nombre= prompt("Nombre array"); 
         /* do{  */
             /* let elemt= prompt("elemento array") */
-            let arr = new Array(nombre);
+            let arr = new Array();
       /*   }while(confirm("otro elemento array")) */
-      ar=arr;
-    console.log(arr);
+      window[nombre] = arr
+      ar=arr;/*
+      ar[nombre];
+    console.log(ar); */
+    console.log(`array ${nombre}creado`);
     
 }
 
@@ -150,8 +154,8 @@ function mostrarArray(){
 
 function eliminarPrimerElemento(){
     console.log("primer elemento eliminado");
-    arr=arr.shift();
-    console.log(arr);
+    ar.shift();
+    console.log(ar);
 }
 
 function eliminarUltimoElemento() {
@@ -162,7 +166,8 @@ function eliminarUltimoElemento() {
  function eliminarCualquierElemento(){
     console.log("cualquier elemento eliminado");
     let num=Number(prompt("index de elemento a eliminar"));
-    ar.splice(pos,num);
+    ar.splice(num,1);
+    console.log(ar);
  }
 
 function agregarElementoAlInicio(){
@@ -180,13 +185,33 @@ function agregarElementosAlFinal(){
 } 
 
 function crearArrayConObjetos(){
+    let cont2=0;
     console.log("crear array con objetos");
     let arrobj=new Array();
     do{
         cont2++;
         let aobj=prompt(`Nombre objeto #${cont2}`);
-        var objarr = new Object();
+        var objarr = new Object(aobj);
+        /* intento de nombre fallido en todos los casos arrobj[aobj]= */
+        arrobj.push(objarr);
+        ob=arrobj;
     }while(confirm('agregar otro objeto'))
+    console.log(arrobj);
+    
+    return cont2;
+}
+
+function iterarArrayConObjetosConFor(){
+}
+
+function iterarArrayConObjetosConForEach(){
+}
+
+function iterarArrayConObjetosConMap(){
+}
+
+function procesoPersonal(){
+    console.log("proceso personal");
 }
 
     
