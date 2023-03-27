@@ -202,12 +202,30 @@ function crearArrayConObjetos(){
 }
 
 function iterarArrayConObjetosConFor(){
+    console.log("iterar array con objetos con for");
+    for(let i=0;i<ob.length;i++){
+        console.log(ob[i]);
+    }
 }
 
 function iterarArrayConObjetosConForEach(){
+    console.log("iterar array con objetos con for each");
+    ob.forEach(element => {
+        console.log(element);
+        
+    });
 }
 
 function iterarArrayConObjetosConMap(){
+    console.log("iterar array con objetos con map ");
+    const newArray = ob.map(obj => {
+        return {
+          ...obj,
+          
+        }
+      });
+      
+      console.log(newArray);
 }
 
 function procesoPersonal(){
